@@ -1,0 +1,12 @@
+{
+  "name": "food_elite",
+  "app_id": "dab355c1",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
