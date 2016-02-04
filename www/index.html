@@ -45,7 +45,7 @@ angular.module('app', ['ionic'])
 });
     </script>
   </head>
-  <body ng-app="app" ng-controller="TableCtrl">
+  <body ng-app="app" ng-controller="TableCtrl as ctrl">
   <div>
   
     <div class="bar bar-header bar-light">
@@ -63,18 +63,19 @@ angular.module('app', ['ionic'])
           <span class="input-label">年齢</span>
           <select ng-model="ageClass" ng-init="ageClass = '11'">
             <option value="1">0 〜 5 (月)</option>
-            <option value="2">6 〜 11 (月)</option>
-            <option value="3">1 〜 2 (歳)</option>
-            <option value="4">3 〜 5 (歳)</option>
-            <option value="5">6 〜 7 (歳)</option>
-            <option value="6">8 〜 9 (歳)</option>
-            <option value="7">10 〜 11 (歳)</option>
-            <option value="8">12 〜 14 (歳)</option>
-            <option value="9">15 〜 17 (歳)</option>
-            <option value="10">18 〜 29 (歳)</option>
-            <option value="11">30 〜 49 (歳)</option>
-            <option value="12">50 〜 69 (歳)</option>
-            <option value="13">70 以上 (歳)</option>
+            <option value="2">6 〜 8 (月)</option>
+            <option value="3">9 〜 11 (月)</option>
+            <option value="4">1 〜 2 (歳)</option>
+            <option value="5">3 〜 5 (歳)</option>
+            <option value="6">6 〜 7 (歳)</option>
+            <option value="7">8 〜 9 (歳)</option>
+            <option value="8">10 〜 11 (歳)</option>
+            <option value="9">12 〜 14 (歳)</option>
+            <option value="10">15 〜 17 (歳)</option>
+            <option value="11">18 〜 29 (歳)</option>
+            <option value="12">30 〜 49 (歳)</option>
+            <option value="13">50 〜 69 (歳)</option>
+            <option value="14">70 以上 (歳)</option>
           </select>
         </label>
         <label class="item item-select" name="gender">
@@ -103,6 +104,10 @@ angular.module('app', ['ionic'])
       <div class="item item-divider">
         <i class="icon ion-stats-bars"></i>
         <span class="card-title">栄養素</span>
+      </div>
+
+      <div>
+        <div ng-include="'partial/calory.html'"></div>
       </div>
 
     </div>
