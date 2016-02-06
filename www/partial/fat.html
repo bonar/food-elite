@@ -1,23 +1,23 @@
 <div class="row">
-  <div class="col-20">脂質</div>
-  <div class="col-10">
+  <div class="col-25">脂質</div>
+  <div class="col-20 text-center">
     <span class="data-type">
       <span ng-if="ageClass < 4">目安量</span>
       <span ng-if="ageClass >= 4">推奨量</span>
     </span>
   </div>
-  <div class="col-60">
+  <div class="col-50">
     <div ng-if="ageClass == 1">
       <strong>{{ getFatAmount(0.5) }}</strong> g<br/>
-      <span class="note">（総エネルギーの <strong>50</strong> %）</span>
+      <span class="note">総エネルギーの <strong>50</strong>%</span>
     </div>
     <div ng-if="ageClass == 2 || ageClass == 3">
       <strong>{{ getFatAmount(0.4) }}</strong> g<br/>
-      <span class="note">（総エネルギーの <strong>40</strong> %）</span>
+      <span class="note">総エネルギーの <strong>40</strong>%</span>
     </div>
     <div ng-if="ageClass > 3">
       <strong>{{ getFatAmount(0.2) }}</strong> 〜 <strong>{{ getFatAmount(0.3) }}</strong> g<br>
-      <span class="note">（総エネルギーの <strong>20</strong> 〜 <strong>30</strong> %）</span>
+      <span class="note">総エネルギーの <strong>20</strong>〜<strong>30</strong>%</span>
     </div>
   </div>
 
