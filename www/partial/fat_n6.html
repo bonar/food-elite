@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-20">n-6系脂肪酸</div>
+  <div class="col-10">
+    <span class="data-type">目安量</span>
+  </div>
+  <div class="col-60">
+    <div ng-if="gender == 'male'">
+      <strong ng-if="ageClass == 1">4</strong>
+      <strong ng-if="ageClass == 2">4</strong>
+      <strong ng-if="ageClass == 3">4</strong>
+      <strong ng-if="ageClass == 4">5</strong>
+      <strong ng-if="ageClass == 5">7</strong>
+      <strong ng-if="ageClass == 6">7</strong>
+      <strong ng-if="ageClass == 7">9</strong>
+      <strong ng-if="ageClass == 8">9</strong>
+      <strong ng-if="ageClass == 9">12</strong>
+      <strong ng-if="ageClass == 10">13</strong>
+      <strong ng-if="ageClass == 11">11</strong>
+      <strong ng-if="ageClass == 12">10</strong>
+      <strong ng-if="ageClass == 13">10</strong>
+      <strong ng-if="ageClass == 14">8</strong>
+      g
+    </div> 
+    <div ng-if="gender == 'female'">
+      <div ng-if="pregnant || lactating">
+        <strong>9</strong> g
+      </div>
+      <div ng-if="!pregnant && !lactating">
+        <strong ng-if="ageClass == 1">4</strong>
+        <strong ng-if="ageClass == 2">4</strong>
+        <strong ng-if="ageClass == 3">4</strong>
+        <strong ng-if="ageClass == 4">5</strong>
+        <strong ng-if="ageClass == 5">6</strong>
+        <strong ng-if="ageClass == 6">7</strong>
+        <strong ng-if="ageClass == 7">7</strong>
+        <strong ng-if="ageClass == 8">8</strong>
+        <strong ng-if="ageClass == 9">10</strong>
+        <strong ng-if="ageClass == 10">10</strong>
+        <strong ng-if="ageClass == 11">8</strong>
+        <strong ng-if="ageClass == 12">8</strong>
+        <strong ng-if="ageClass == 13">8</strong>
+        <strong ng-if="ageClass == 14">7</strong>
+        g
+      </div>
+    </div>
+  </div>
+</div>

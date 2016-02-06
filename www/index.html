@@ -142,8 +142,8 @@ angular.module('app', ['ionic'])
           </select>
         </label>
         <div ng-if="gender == 'female'">
-          <ion-toggle ng-model="pregnant" toggle-class="toggle-positive" name="pregnant">妊娠している</ion-toggle>
-          <ion-toggle ng-model="lactating" toggle-class="toggle-positive" name="breast_feeding">授乳中</ion-toggle>
+          <ion-toggle ng-model="$parent.pregnant" toggle-class="toggle-positive" name="pregnant">妊娠している</ion-toggle>
+          <ion-toggle ng-model="$parent.lactating" toggle-class="toggle-positive" name="breast_feeding">授乳中</ion-toggle>
         </div>
         <label class="item item-select" name="activity_level">
           <span class="input-label">活動レベル</span>
@@ -167,6 +167,7 @@ angular.module('app', ['ionic'])
         <div ng-include="'partial/protein.html'"></div>
         <div ng-include="'partial/fat.html'"></div>
         <div ng-include="'partial/fat_saturated.html'"></div>
+        <div ng-include="'partial/fat_n6.html'"></div>
       </div>
 
     </div>
