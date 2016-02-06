@@ -1,0 +1,31 @@
+
+<div class="row">
+  <div class="col-50">
+    たんぱく質&nbsp;
+    <span ng-if="ageClass < 4">目安量</span>
+    <span ng-if="ageClass >= 4">推奨量</span>
+  </div>
+  <div class="col-50">
+    <div ng-if="gender == 'male'">
+      <span ng-if="ageClass == 1">10</span>
+      <span ng-if="ageClass == 2">15</span>
+      <span ng-if="ageClass == 3">25</span>
+      <span ng-if="ageClass == 4">20</span>
+      <span ng-if="ageClass == 5">25</span>
+      <span ng-if="ageClass == 6">35</span>
+      <span ng-if="ageClass == 7">40</span>
+      <span ng-if="ageClass == 8">50</span>
+      <span ng-if="ageClass == 9">60</span>
+      <span ng-if="ageClass == 10">65</span>
+      <span ng-if="ageClass == 11">60</span>
+      <span ng-if="ageClass == 12">60</span>
+      <span ng-if="ageClass == 13">60</span>
+      <span ng-if="ageClass == 14">60</span>
+      g
+    </div>
+    <div ng-if="gender == 'female'">
+      <span ng-if="ageClass == 1">-</span>
+      g
+    </div>
+  </div>
+</div>
