@@ -1,12 +1,12 @@
 <div class="row">
-  <div class="col-20">脂質</div>
-  <div class="col-10">
+  <div class="col-25">脂質</div>
+  <div class="col-20">
     <span class="data-type">
       <span ng-if="ageClass < 4">目安量</span>
       <span ng-if="ageClass >= 4">推奨量</span>
     </span>
   </div>
-  <div class="col-60">
+  <div class="col-50">
     <div ng-if="ageClass == 1">
       <strong>{{ getFatAmount(0.5) }}</strong> g<br/>
       <span class="note">（総エネルギーの <strong>50</strong> %）</span>
