@@ -17,6 +17,14 @@
     .card-title {
       margin-left: 10px;
     }
+    .data-type {
+      color: #888888;
+      font-size: 0.8em;
+    }
+    .food-table .row {
+      padding-top: 17px;
+      padding-left: 17px;
+    }
     </style>
 
 
@@ -144,9 +152,10 @@ angular.module('app', ['ionic'])
         <span class="card-title">栄養素</span>
       </div>
 
-      <div>
+      <div class="food-table">
         <div ng-include="'partial/calory.html'"></div>
         <div ng-include="'partial/protein.html'"></div>
+        <div ng-include="'partial/fat.html'"></div>
       </div>
 
     </div>
