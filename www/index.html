@@ -21,6 +21,10 @@
       color: #888888;
       font-size: 0.8em;
     }
+    .note {
+      color: #888888;
+      font-size: 0.8em;
+    }
     .food-table .row {
       padding-top: 17px;
       padding-left: 17px;
@@ -84,9 +88,15 @@ angular.module('app', ['ionic'])
       [1500,  1750, 2000],
     ]
   };
-  $scope.getCaloryIndex = function(gender, ageClass, activityLevel) {
-    return caloryTable[gender][(ageClass - 1)][(activityLevel - 1)];
-  }
+  $scope.getCaloryIndex = function() {
+    var ageIndex = $scope.ageClass - 1;
+    var acvIndex = $scope.activityLevel - 1;
+    return caloryTable[$scope.gender][ageIndex][acvIndex];
+  };
+  $scope.getFatAmount = function(rate) {
+    var calory = $scope.getCaloryIndex();
+    return ((calory * rate) / 9.0).toFixed(1); // 脂質1g=9kcal で換算
+  };
 
 });
     </script>
@@ -137,7 +147,7 @@ angular.module('app', ['ionic'])
         </div>
         <label class="item item-select" name="activity_level">
           <span class="input-label">活動レベル</span>
-          <select ng-model="activeityLevel" ng-init="activeityLevel = '2'">
+          <select ng-model="activityLevel" ng-init="activityLevel = '2'">
             <option value="1">低い</option>
             <option value="2">普通</option>
             <option value="3">高い</option>
