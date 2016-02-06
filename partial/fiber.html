@@ -1,0 +1,32 @@
+<div ng-if="ageClass > 5" class="row">
+  <div class="col-20">食物繊維</div>
+  <div class="col-10">
+    <span class="data-type">目標量</span>
+  </div>
+  <div class="col-60">
+    <div ng-if="gender == 'male'">
+      <strong ng-if="ageClass == 6">11</strong>
+      <strong ng-if="ageClass == 7">12</strong>
+      <strong ng-if="ageClass == 8">13</strong>
+      <strong ng-if="ageClass == 9">17</strong>
+      <strong ng-if="ageClass == 10">19</strong>
+      <strong ng-if="ageClass == 11">20</strong>
+      <strong ng-if="ageClass == 12">20</strong>
+      <strong ng-if="ageClass == 13">20</strong>
+      <strong ng-if="ageClass == 14">19</strong>
+      g 以上
+    </div>
+    <div ng-if="gender == 'female'">
+      <strong ng-if="ageClass == 6">10</strong>
+      <strong ng-if="ageClass == 7">12</strong>
+      <strong ng-if="ageClass == 8">13</strong>
+      <strong ng-if="ageClass == 9">16</strong>
+      <strong ng-if="ageClass == 10">17</strong>
+      <strong ng-if="ageClass == 11">18</strong>
+      <strong ng-if="ageClass == 12">18</strong>
+      <strong ng-if="ageClass == 13">18</strong>
+      <strong ng-if="ageClass == 14">17</strong>
+      g 以上
+    </div>
+  </div>
+</div>

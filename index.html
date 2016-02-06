@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>1日の栄養素</title>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <style>
+    .user-variables {
+      margin-top: 10px;
+    }
+    .card-title {
+      margin-left: 10px;
+    }
+    .data-type {
+      color: #888888;
+      font-size: 0.8em;
+    }
+    .note {
+      color: #888888;
+      font-size: 0.8em;
+    }
+    .food-table {
+      padding-top: 7px;
+      padding-left: 17px;
+      padding-bottom: 13px;
+    }
+    .food-table .row {
+      padding-top: 15px;
+    }
+    </style>
+
+
+    <script>
+angular.module('app', ['ionic'])
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
+  });
+})
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+    .state('page1', {
+      url: '/',
+      templateUrl: 'page1.html'
+    });
+  $urlRouterProvider.otherwise('/');
+})
+.controller('TableCtrl', function($scope) {
+
+  var caloryTable = {
+    "male": [
+      [550, 550, 550],
+      [650, 650, 650],
+      [700, 700, 700],
+      [950, 950, 950],
+      [1300, 1300, 1300],
+      [1350, 1550, 1750],
+      [1600, 1850, 2100],
+      [1950, 2250, 2500],
+      [2300, 2600, 2900],
+      [2500, 2850, 3150],
+      [2300, 2650, 3050],
+      [2300, 2650, 3050],
+      [2100, 2450, 2800],
+      [1850, 2200, 2500]
+    ],
+    "female": [
+      [500, 500, 500],
+      [600, 600, 600],
+      [650, 650, 650],
+      [900, 900, 900],
+      [1250, 1250, 1250],
+      [1250, 1450, 1650],
+      [1500, 1700, 1900],
+      [1850, 2100, 2350],
+      [2150,  2400, 2700],
+      [2050, 2300, 2550],
+      [1650, 1950, 2200],
+      [1750, 2000, 2300],
+      [1650, 1900, 2200],
+      [1500,  1750, 2000],
+    ]
+  };
+  $scope.getCaloryIndex = function() {
+    var ageIndex = $scope.ageClass - 1;
+    var acvIndex = $scope.activityLevel - 1;
+    return caloryTable[$scope.gender][ageIndex][acvIndex];
+  };
+  $scope.getFatAmount = function(rate) {
+    var calory = $scope.getCaloryIndex();
+    return ((calory * rate) / 9.0).toFixed(1); // 脂質1g=9kcal で換算
+  };
+  $scope.getCHAmount = function(rate) {
+    var calory = $scope.getCaloryIndex();
+    return ((calory * rate) / 4.0).toFixed(1); // 炭水化物1g=4kcal で換算
+  };
+
+});
+    </script>
+  </head>
+  <body ng-app="app" ng-controller="TableCtrl as ctrl">
+    <ion-content ng-controller="TableCtrl as ctrl">
+
+    <div class="card user-variables">
+      <div class="item item-divider">
+        <i class="icon ion-person"></i>
+        <span class="card-title">あなたの情報</span>
+      </div>
+
+      <form>
+        <label class="item item-select" name="age">
+          <span class="input-label">年齢</span>
+          <select ng-model="ageClass" ng-init="ageClass = '11'">
+            <option value="1">0 〜 5 (月)</option>
+            <option value="2">6 〜 8 (月)</option>
+            <option value="3">9 〜 11 (月)</option>
+            <option value="4">1 〜 2 (歳)</option>
+            <option value="5">3 〜 5 (歳)</option>
+            <option value="6">6 〜 7 (歳)</option>
+            <option value="7">8 〜 9 (歳)</option>
+            <option value="8">10 〜 11 (歳)</option>
+            <option value="9">12 〜 14 (歳)</option>
+            <option value="10">15 〜 17 (歳)</option>
+            <option value="11">18 〜 29 (歳)</option>
+            <option value="12">30 〜 49 (歳)</option>
+            <option value="13">50 〜 69 (歳)</option>
+            <option value="14">70 以上 (歳)</option>
+          </select>
+        </label>
+        <label class="item item-select" name="gender">
+          <span class="input-label">性別</span>
+          <select ng-model="gender" ng-init="gender = 'male'">
+            <option value="male">男性</option>
+            <option value="female">女性</option>
+          </select>
+        </label>
+        <div ng-if="gender == 'female'">
+          <ion-toggle ng-model="$parent.pregnant" toggle-class="toggle-positive" name="pregnant">妊娠している</ion-toggle>
+          <ion-toggle ng-model="$parent.lactating" toggle-class="toggle-positive" name="breast_feeding">授乳中</ion-toggle>
+        </div>
+        <label class="item item-select" name="activity_level">
+          <span class="input-label">活動レベル</span>
+          <select ng-model="activityLevel" ng-init="activityLevel = '2'">
+            <option value="1">低い</option>
+            <option value="2">普通</option>
+            <option value="3">高い</option>
+          </select>
+        </label>
+      </form>
+    </div>
+
+    <div class="card user-variables">
+      <div class="item item-divider">
+        <span>三大栄養素</span>
+      </div>
+      <div class="food-table">
+        <div ng-include="'partial/calory.html'"></div>
+        <div ng-include="'partial/protein.html'"></div>
+        <div ng-include="'partial/carboh.html'"></div>
+        <div ng-include="'partial/fiber.html'"></div>
+        <div ng-include="'partial/fat.html'"></div>
+        <div ng-include="'partial/fat_saturated.html'"></div>
+        <div ng-include="'partial/fat_n6.html'"></div>
+        <div ng-include="'partial/fat_n3.html'"></div>
+      </div>
+    </div>
+
+    <div class="card user-variables">
+      <div class="item item-divider">
+        <span>脂溶性ビタミン</span>
+      </div>
+      <div class="food-table">
+      </div>
+    </div>
+
+    <div class="card user-variables">
+      <div class="item item-divider">
+        <span>水溶性ビタミン</span>
+      </div>
+      <div class="food-table">
+      </div>
+    </div>
+
+    <div class="card user-variables">
+      <div class="item item-divider">
+        <span>多量ミネラル</span>
+      </div>
+      <div class="food-table">
+      </div>
+    </div>
+
+    <div class="card user-variables">
+      <div class="item item-divider">
+        <span>微量ミネラル</span>
+      </div>
+      <div class="food-table">
+      </div>
+    </div>
+
+
+    </ion-content>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+
+<div class="row">
+  <div class="col-20"> たんぱく質</div>
+  <div class="col-10">
+    <span class="data-type">
+      <span ng-if="ageClass < 4">目安量</span>
+      <span ng-if="ageClass >= 4">推奨量</span>
+    </span>
+  </div>
+  <div class="col-70">
+    <div ng-if="gender == 'male'">
+      <strong ng-if="ageClass == 1">10</strong>
+      <strong ng-if="ageClass == 2">15</strong>
+      <strong ng-if="ageClass == 3">25</strong>
+      <strong ng-if="ageClass == 4">20</strong>
+      <strong ng-if="ageClass == 5">25</strong>
+      <strong ng-if="ageClass == 6">35</strong>
+      <strong ng-if="ageClass == 7">40</strong>
+      <strong ng-if="ageClass == 8">50</strong>
+      <strong ng-if="ageClass == 9">60</strong>
+      <strong ng-if="ageClass == 10">65</strong>
+      <strong ng-if="ageClass == 11">60</strong>
+      <strong ng-if="ageClass == 12">60</strong>
+      <strong ng-if="ageClass == 13">60</strong>
+      <strong ng-if="ageClass == 14">60</strong>
+      g
+    </div>
+    <div ng-if="gender == 'female'">
+      <strong ng-if="ageClass == 1">10</strong>
+      <strong ng-if="ageClass == 2">15</strong>
+      <strong ng-if="ageClass == 3">25</strong>
+      <strong ng-if="ageClass == 4">20</strong>
+      <strong ng-if="ageClass == 5">25</strong>
+      <strong ng-if="ageClass == 6">30</strong>
+      <strong ng-if="ageClass == 7">40</strong>
+      <strong ng-if="ageClass == 8">50</strong>
+      <strong ng-if="ageClass == 9">55</strong>
+      <strong ng-if="ageClass == 10">55</strong>
+      <strong ng-if="ageClass == 11">50</strong>
+      <strong ng-if="ageClass == 12">50</strong>
+      <strong ng-if="ageClass == 13">50</strong>
+      <strong ng-if="ageClass == 14">50</strong>
+      g
+    </div>
+  </div>
+</div>
