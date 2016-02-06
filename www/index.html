@@ -101,6 +101,10 @@ angular.module('app', ['ionic'])
     var calory = $scope.getCaloryIndex();
     return ((calory * rate) / 9.0).toFixed(1); // 脂質1g=9kcal で換算
   };
+  $scope.getCHAmount = function(rate) {
+    var calory = $scope.getCaloryIndex();
+    return ((calory * rate) / 4.0).toFixed(1); // 炭水化物1g=4kcal で換算
+  };
 
 });
     </script>
@@ -169,6 +173,7 @@ angular.module('app', ['ionic'])
       <div class="food-table">
         <div ng-include="'partial/calory.html'"></div>
         <div ng-include="'partial/protein.html'"></div>
+        <div ng-include="'partial/carboh.html'"></div>
         <div ng-include="'partial/fat.html'"></div>
         <div ng-include="'partial/fat_saturated.html'"></div>
         <div ng-include="'partial/fat_n6.html'"></div>
