@@ -35,6 +35,10 @@
     .food-table .row {
       padding-top: 15px;
     }
+    .header {
+      color: #aaaaaa;
+      font-size: 0.8em;
+    }
     </style>
 
 
@@ -183,6 +187,7 @@ angular.module('app', ['ionic'])
         <span>脂溶性ビタミン</span>
       </div>
       <div class="food-table">
+        <div ng-include="'partial/table_header.html'"></div>
       </div>
     </div>
 
@@ -191,6 +196,7 @@ angular.module('app', ['ionic'])
         <span>水溶性ビタミン</span>
       </div>
       <div class="food-table">
+        <div ng-include="'partial/table_header.html'"></div>
       </div>
     </div>
 
@@ -199,6 +205,7 @@ angular.module('app', ['ionic'])
         <span>多量ミネラル</span>
       </div>
       <div class="food-table">
+        <div ng-include="'partial/table_header.html'"></div>
       </div>
     </div>
 
@@ -207,6 +214,7 @@ angular.module('app', ['ionic'])
         <span>微量ミネラル</span>
       </div>
       <div class="food-table">
+        <div ng-include="'partial/table_header.html'"></div>
       </div>
     </div>
 
