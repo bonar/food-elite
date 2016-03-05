@@ -35,11 +35,13 @@
       padding-left: 12px;
       padding-bottom: 13px;
     }
-    .food-table .row {
-      padding-top: 15px;
+    .food-table .line {
+      padding-top: 7px;
     }
+
     .header {
-      color: #aaaaaa;
+      color: #999999;
+      font-size: 0.9em;
     }
     </style>
 
@@ -173,14 +175,14 @@ angular.module('app', ['ionic'])
         <span>三大栄養素</span>
       </div>
       <div class="food-table">
-        <div ng-include="'partial/calory.html'"></div>
-        <div ng-include="'partial/protein.html'"></div>
-        <div ng-include="'partial/carboh.html'"></div>
-        <div ng-include="'partial/fiber.html'"></div>
-        <div ng-include="'partial/fat.html'"></div>
-        <div ng-include="'partial/fat_saturated.html'"></div>
-        <div ng-include="'partial/fat_n6.html'"></div>
-        <div ng-include="'partial/fat_n3.html'"></div>
+        <div class="line" ng-include="'partial/calory.html'"></div>
+        <div class="line" ng-include="'partial/protein.html'"></div>
+        <div class="line" ng-include="'partial/carboh.html'"></div>
+        <div class="line" ng-include="'partial/fiber.html'"></div>
+        <div class="line" ng-include="'partial/fat.html'"></div>
+        <div class="line" ng-include="'partial/fat_saturated.html'"></div>
+        <div class="line" ng-include="'partial/fat_n6.html'"></div>
+        <div class="line" ng-include="'partial/fat_n3.html'"></div>
       </div>
     </div>
 
