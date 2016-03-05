@@ -27,6 +27,9 @@
       color: #888888;
       font-size: 0.8em;
     }
+    small {
+      font-size: 0.9em;
+    }
     .food-table {
       padding-top: 7px;
       padding-left: 12px;
@@ -126,7 +129,7 @@ angular.module('app', ['ionic'])
       <form>
         <label class="item item-select" name="age">
           <span class="input-label">年齢</span>
-          <select ng-model="ageClass" ng-init="ageClass = '11'">
+          <select ng-model="ageClass" ng-init="ageClass = '12'">
             <option value="1">0 〜 5 (月)</option>
             <option value="2">6 〜 8 (月)</option>
             <option value="3">9 〜 11 (月)</option>
@@ -204,6 +207,11 @@ angular.module('app', ['ionic'])
         <div ng-include="'partial/vitamin_b2.html'"></div>
         <div ng-include="'partial/niacin.html'"></div>
         <div ng-include="'partial/vitamin_b6.html'"></div>
+        <div ng-include="'partial/vitamin_b12.html'"></div>
+        <div ng-include="'partial/yosan.html'"></div>
+        <div ng-include="'partial/pantothenic.html'"></div>
+        <div ng-include="'partial/biotin.html'"></div>
+        <div ng-include="'partial/vitamin_c.html'"></div>
       </div>
     </div>
 
