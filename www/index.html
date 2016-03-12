@@ -24,6 +24,15 @@
       color: #999999;
       font-size: 0.9em;
     }
+    .detail-button {
+      font-size: 0.9em;
+      width: 90%;
+      margin-top: 15px;
+      border: 1px solid #efefef !important;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
     .note {
       color: #888888;
       font-size: 0.8em;
@@ -201,13 +210,26 @@ angular.module('app', ['ionic'])
       </div>
       <div class="food-table">
         <div class="line" ng-include="'partial/calory.html'"></div>
-        <div class="line" ng-include="'partial/protein.html'"></div>
+        <div class="line colored-row" ng-include="'partial/protein.html'"></div>
         <div class="line" ng-include="'partial/carboh.html'"></div>
-        <div class="line" ng-include="'partial/fiber.html'"></div>
-        <div class="line" ng-include="'partial/fat.html'"></div>
-        <div class="line" ng-include="'partial/fat_saturated.html'"></div>
-        <div class="line" ng-include="'partial/fat_n6.html'"></div>
-        <div class="line" ng-include="'partial/fat_n3.html'"></div>
+        <div class="line colored-row" ng-include="'partial/fat.html'"></div>
+        <div ng-if="!detail">
+          <button class="button button-light detail-button" ng-click="$parent.detail = true">
+            もっと見る
+          </button>
+        </div>
+        <div ng-if="detail">
+          <div class="line" ng-include="'partial/fiber.html'"></div>
+          <div class="line colored-row" ng-include="'partial/fat_saturated.html'"></div>
+          <div class="line" ng-include="'partial/fat_n6.html'"></div>
+          <div class="line colored-row" ng-include="'partial/fat_n3.html'"></div>
+        </div>
+        <div ng-if="detail">
+          <button class="button button-light detail-button" ng-click="$parent.detail = false">
+            閉じる
+          </button>
+        </div>
+
       </div>
     </div>
 
